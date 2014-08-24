@@ -1,5 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This function will output a special vector. This vector is a list of functions.
+## The functions are (1) set the value of the matrix, (2) get the value of the matrix
+## (3) set the inverse of the matrix and (4) get the inverse of the matrix
 
 ## Write a short comment describing this function
 
@@ -8,7 +9,7 @@ makeCacheMatrix <- function(x = matrix(), nR, nC) {
     set <- function(y) {
         x <<- y
         i <<- NULL
-    }
+    
     get <- function() matrix(x, nrow=nR, ncol=nC, byrow=TRUE)
     setInverse <- function(solve) i <<- solve
     getInverse <- function() i
@@ -19,7 +20,9 @@ makeCacheMatrix <- function(x = matrix(), nR, nC) {
 }
 
 
-## Write a short comment describing this function
+## This function checks if the inverse of the matrix is already present in the
+## cache. If the inverse of the vector is present in the cache then the function
+## will not calculate the cache again.
 
 cacheSolve <- function(x, ...) {
     i <- x$getInverse()
